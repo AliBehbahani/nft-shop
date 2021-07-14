@@ -1,11 +1,16 @@
+//react imports
 import React from "react";
 import { Button, Text, View } from "react-native";
+//styles
+import { Title, BGImage, HomeView, Skip } from "../styles";
 const Home = () => {
   return (
-    <View>
-      <Text>The Nifty Shop</Text>
-      <Text onPress={() => alert("skip to galleries")}>Skip</Text>
-    </View>
+    <BGImage source={{ uri: "https://wallpaperaccess.com/full/42337.jpg" }}>
+      <HomeView>
+        <Title>The Nifty Shop</Title>
+        <Skip onPress={() => alert("skip to galleries")}>Skip</Skip>
+      </HomeView>
+    </BGImage>
   );
 };
 
