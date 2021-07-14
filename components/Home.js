@@ -1,6 +1,5 @@
 //react imports
 import React from "react";
-import { Button, Text, View } from "react-native";
 //styles
 import { Title, BGImage, HomeView, Skip } from "../styles";
 const Home = () => {
