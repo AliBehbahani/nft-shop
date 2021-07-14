@@ -8,10 +8,10 @@ import NftItem from "./NftItem";
 //stores
 import nftStore from "../../stores/nftStore";
 
-const NftList = () => {
+const NftList = ({ nfts, navigation }) => {
   if (nftStore.loading) return <Spinner />;
-  const nftList = nftStore.nfts.map((nft) => (
-    <NftItem nft={nft} key={nft.id} />
+  const nftList = nfts.map((nft) => (
+    <NftItem nft={nft} key={nft.id} navigation={navigation} />
   ));
   return <List>{nftList}</List>;
 };

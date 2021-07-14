@@ -8,11 +8,12 @@ import { observer } from "mobx-react";
 import NftList from "../nft/NftList";
 //stores
 import galleryStore from "../../stores/galleryStore";
-
 import nftStore from "../../stores/nftStore";
-const GalleryDetail = () => {
+
+const GalleryDetail = ({ route }) => {
+  const { gallery } = route.params;
   if (galleryStore.loading) return <Spinner />;
-  const gallery = galleryStore.galleries[1];
+
   const nfts = gallery.nfts.map((nft) => nftStore.getNftById(nft.id));
 
   return (

@@ -2,12 +2,12 @@
 import React from "react";
 //styles
 import { Title, BGImage, HomeView, Skip } from "../styles";
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <BGImage source={{ uri: "https://wallpaperaccess.com/full/42337.jpg" }}>
       <HomeView>
         <Title>The Nifty Shop</Title>
-        <Skip onPress={() => alert("skip to galleries")}>Skip</Skip>
+        <Skip onPress={() => navigation.navigate("GalleryList")}>Skip</Skip>
       </HomeView>
     </BGImage>
   );

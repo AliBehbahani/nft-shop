@@ -8,10 +8,10 @@ import GalleryItem from "./GalleryItem";
 //stores
 import galleryStore from "../../stores/galleryStore";
 
-const GalleryList = () => {
+const GalleryList = ({ navigation }) => {
   if (galleryStore.loading) return <Spinner />;
   const galleryList = galleryStore.galleries.map((gallery) => (
-    <GalleryItem gallery={gallery} key={gallery.id} />
+    <GalleryItem gallery={gallery} key={gallery.id} navigation={navigation} />
   ));
 
   return <List>{galleryList}</List>;

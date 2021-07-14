@@ -1,22 +1,18 @@
 //react imports
+import "react-native-gesture-handler";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { NativeBaseProvider } from "native-base";
-//components
-import Home from "./components/Home";
-import NftList from "./components/nft/NftList";
-import GalleryList from "./components/gallery/GalleryList";
-import GalleryDetail from "./components/gallery/GalleryDetail";
 
+//navigation
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "./components/navigation/index";
 export default function App() {
   return (
     <NativeBaseProvider>
-      {/* <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" /> */}
-      {/* <Home /> */}
-      {/* <NftList /> */}
-      {/* <GalleryList /> */}
-      <GalleryDetail />
+      <NavigationContainer>
+        <RootNavigator />
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
