@@ -4,6 +4,7 @@ import { Text, Image } from "react-native";
 import { List } from "native-base";
 
 const NftItem = ({ nft, navigation }) => {
+  return console.log(nft);
   return (
     <List.Item onPress={() => navigation.navigate("NftDetail", { nft: nft })}>
       <Text>{nft.name}</Text>

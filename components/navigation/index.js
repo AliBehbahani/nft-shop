@@ -12,7 +12,7 @@ import NftDetail from "../nft/NftDetail";
 const Stack = createNativeStackNavigator();
 export default RootNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="NftDetail">
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
         name="Home"
         component={Home}
@@ -36,10 +36,10 @@ export default RootNavigator = () => {
       <Stack.Screen
         name="NftDetail"
         component={NftDetail}
-        options={({ route }) => {
-          const nft = route.params.nft;
-          return { title: nft.name };
-        }}
+        // options={({ route }) => {
+        //   const nft = route.params.nft;
+        //   return { title: nft.name };
+        // }}
       />
     </Stack.Navigator>
   );

@@ -8,18 +8,22 @@ import { observer } from "mobx-react";
 import nftStore from "../../stores/nftStore";
 
 const NftDetail = ({ route }) => {
+  return console.log(route.params);
   const { nft } = route.params;
   if (nftStore.loading) return <Spinner />;
 
   return (
-    <div>
+    <>
       <View>
-        <Image source={{ uri: nft.image }} />
+        <Image
+          source={{ uri: nft.image }}
+          style={{ width: 100, height: 100 }}
+        />
         <Text>{nft.name}</Text>
         <Text>{nft.price}</Text>
         <Text>{nft.description}</Text>
       </View>
-    </div>
+    </>
   );
 };
 export default observer(NftDetail);
