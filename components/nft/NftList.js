@@ -9,7 +9,7 @@ import NftItem from "./NftItem";
 import nftStore from "../../stores/nftStore";
 
 const NftList = () => {
-  if (galleryStore.loading) return <Spinner />;
+  if (nftStore.loading) return <Spinner />;
   const nftList = nftStore.nfts.map((nft) => (
     <NftItem nft={nft} key={nft.id} />
   ));

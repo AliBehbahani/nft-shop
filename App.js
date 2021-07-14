@@ -1,9 +1,12 @@
-import { StatusBar } from "expo-status-bar";
+//react imports
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { NativeBaseProvider } from "native-base";
+//components
 import Home from "./components/Home";
 import NftList from "./components/nft/NftList";
-import { NativeBaseProvider, Box } from "native-base";
+import GalleryList from "./components/gallery/GalleryList";
+
 export default function App() {
   return (
     <NativeBaseProvider>
@@ -11,6 +14,7 @@ export default function App() {
       <StatusBar style="auto" /> */}
       {/* <Home /> */}
       {/* <NftList /> */}
+      <GalleryList />
     </NativeBaseProvider>
   );
 }
