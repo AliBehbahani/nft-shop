@@ -9,10 +9,12 @@ import NftList from "../nft/NftList";
 //stores
 import galleryStore from "../../stores/galleryStore";
 
-import nftStore from "../stores/nftStore";
+import nftStore from "../../stores/nftStore";
 const GalleryDetail = () => {
   if (galleryStore.loading) return <Spinner />;
+  const gallery = galleryStore.galleries[1];
   const nfts = gallery.nfts.map((nft) => nftStore.getNftById(nft.id));
+
   return (
     <View>
       <View>

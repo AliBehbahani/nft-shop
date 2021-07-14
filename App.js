@@ -6,6 +6,7 @@ import { NativeBaseProvider } from "native-base";
 import Home from "./components/Home";
 import NftList from "./components/nft/NftList";
 import GalleryList from "./components/gallery/GalleryList";
+import GalleryDetail from "./components/gallery/GalleryDetail";
 
 export default function App() {
   return (
@@ -14,7 +15,8 @@ export default function App() {
       <StatusBar style="auto" /> */}
       {/* <Home /> */}
       {/* <NftList /> */}
-      <GalleryList />
+      {/* <GalleryList /> */}
+      <GalleryDetail />
     </NativeBaseProvider>
   );
 }
