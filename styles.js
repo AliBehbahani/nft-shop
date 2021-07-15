@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { List } from "native-base";
+import { TouchableOpacity } from "react-native";
 export const HomeView = styled.View`
   height: 30%;
   align-items: center;
