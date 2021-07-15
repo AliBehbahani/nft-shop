@@ -7,6 +7,8 @@ import { observer } from "mobx-react";
 import GalleryItem from "./GalleryItem";
 //stores
 import galleryStore from "../../stores/galleryStore";
+//styles
+import { BGImage, ListStyled } from "../../styles";
 
 const GalleryList = ({ navigation }) => {
   if (galleryStore.loading) return <Spinner />;
@@ -14,7 +16,11 @@ const GalleryList = ({ navigation }) => {
     <GalleryItem gallery={gallery} key={gallery.id} navigation={navigation} />
   ));
 
-  return <List>{galleryList}</List>;
+  return (
+    <BGImage source={require("../../assets/bg.jpg")}>
+      <List>{galleryList}</List>
+    </BGImage>
+  );
 };
 
 export default observer(GalleryList);
