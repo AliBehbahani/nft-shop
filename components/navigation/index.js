@@ -23,7 +23,13 @@ export default RootNavigator = () => {
       <Stack.Screen
         name="GalleryList"
         component={GalleryList}
-        options={{ title: "Choose Gallery" }}
+        options={{
+          title: "Choose Gallery",
+          headerStyle: {
+            backgroundColor: "#151e54",
+          },
+          headerTintColor: "white",
+        }}
       />
       <Stack.Screen
         name="GalleryDetail"
@@ -36,10 +42,10 @@ export default RootNavigator = () => {
       <Stack.Screen
         name="NftDetail"
         component={NftDetail}
-        // options={({ route }) => {
-        //   const nft = route.params.nft;
-        //   return { title: nft.name };
-        // }}
+        options={({ route }) => {
+          const nft = route.params.nft;
+          return { title: nft.name };
+        }}
       />
     </Stack.Navigator>
   );

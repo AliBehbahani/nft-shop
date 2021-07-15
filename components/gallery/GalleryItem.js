@@ -2,6 +2,8 @@
 import React from "react";
 import { Image, Text } from "react-native";
 import { List } from "native-base";
+//styles
+import { TextStyled } from "../../styles";
 
 const GalleryItem = ({ gallery, navigation }) => {
   return (
@@ -10,9 +12,9 @@ const GalleryItem = ({ gallery, navigation }) => {
     >
       <Image
         source={{ uri: gallery.image }}
-        style={{ width: 100, height: 100 }}
+        style={{ width: 125, height: 125, padding: 40 }}
       />
-      <Text>{gallery.name}</Text>
+      <TextStyled>{gallery.name}</TextStyled>
     </List.Item>
   );
 };

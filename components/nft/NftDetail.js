@@ -8,7 +8,7 @@ import { observer } from "mobx-react";
 import nftStore from "../../stores/nftStore";
 
 const NftDetail = ({ route }) => {
-  return console.log(route.params);
+  // return console.log(route.params);
   const { nft } = route.params;
   if (nftStore.loading) return <Spinner />;
 

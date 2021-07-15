@@ -1,7 +1,7 @@
 //react imports
 import "react-native-gesture-handler";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { NativeBaseProvider } from "native-base";
 
 //navigation

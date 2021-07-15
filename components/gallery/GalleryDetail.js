@@ -10,7 +10,7 @@ import NftList from "../nft/NftList";
 import galleryStore from "../../stores/galleryStore";
 import nftStore from "../../stores/nftStore";
 
-const GalleryDetail = ({ route }) => {
+const GalleryDetail = ({ navigation, route }) => {
   const { gallery } = route.params;
   if (galleryStore.loading) return <Spinner />;
 
@@ -19,10 +19,14 @@ const GalleryDetail = ({ route }) => {
   return (
     <View>
       <View>
+        <Image
+          source={{ uri: gallery.image }}
+          style={{ width: 100, height: 100 }}
+          alt={gallery.name}
+        />
         <Text>{gallery.name}</Text>
-        <Image src={{ uri: gallery.image }} alt={gallery.name} />
       </View>
-      <NftList nfts={nfts} />
+      <NftList nfts={nfts} navigation={navigation} />
     </View>
   );
 };

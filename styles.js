@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { List } from "native-base";
 export const HomeView = styled.View`
   height: 30%;
   align-items: center;
@@ -10,7 +10,7 @@ export const Title = styled.Text`
   color: white;
   font-size: 40px;
 `;
-export const Skip = styled.Text`
+export const TextStyled = styled.Text`
   color: white;
   font-size: 20px;
 `;
@@ -18,4 +18,10 @@ export const BGImage = styled.ImageBackground`
   flex: 1;
   height: 100%;
   width: 100%;
+`;
+export const ListStyled = styled(List.Item)`
+  border: 0;
+  height: 20%;
+  align-items: center;
+  justify-content: center;
 `;
