@@ -8,7 +8,7 @@ import GalleryItem from "./GalleryItem";
 //stores
 import galleryStore from "../../stores/galleryStore";
 //styles
-import { BGImage, ListStyled } from "../../styles";
+import { BGImage } from "../../styles";
 
 const GalleryList = ({ navigation }) => {
   if (galleryStore.loading) return <Spinner />;
@@ -18,7 +18,7 @@ const GalleryList = ({ navigation }) => {
 
   return (
     <BGImage source={require("../../assets/bg.jpg")}>
-      <List>{galleryList}</List>
+      <List style={{ borderColor: "black" }}>{galleryList}</List>
     </BGImage>
   );
 };

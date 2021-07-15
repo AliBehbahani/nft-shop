@@ -34,17 +34,36 @@ export default RootNavigator = () => {
       <Stack.Screen
         name="GalleryDetail"
         component={GalleryDetail}
-        options={({ route }) => {
-          const gallery = route.params.gallery;
-          return { title: gallery.name };
-        }}
+        options={
+          //   ({
+          //     headerStyle: { backgroundColor: "#151e54" },
+          //     headerTintColor: "white",
+          //   },
+          //   ({ route }) => {
+          //     const gallery = route.params.gallery;
+          //     return { title: gallery.name };
+          //   })
+
+          ({ route }) => {
+            const gallery = route.params.gallery;
+            return {
+              title: gallery.name,
+              headerStyle: { backgroundColor: "#151e54" },
+              headerTintColor: "white",
+            };
+          }
+        }
       />
       <Stack.Screen
         name="NftDetail"
         component={NftDetail}
         options={({ route }) => {
           const nft = route.params.nft;
-          return { title: nft.name };
+          return {
+            title: nft.name,
+            headerStyle: { backgroundColor: "#151e54" },
+            headerTintColor: "white",
+          };
         }}
       />
     </Stack.Navigator>

@@ -9,6 +9,8 @@ import NftList from "../nft/NftList";
 //stores
 import galleryStore from "../../stores/galleryStore";
 import nftStore from "../../stores/nftStore";
+//styles
+import { BGImage, TextStyled, ViewGalleryDetail } from "../../styles";
 
 const GalleryDetail = ({ navigation, route }) => {
   const { gallery } = route.params;
@@ -17,17 +19,17 @@ const GalleryDetail = ({ navigation, route }) => {
   const nfts = gallery.nfts.map((nft) => nftStore.getNftById(nft.id));
 
   return (
-    <View>
-      <View>
+    <BGImage source={require("../../assets/bg.jpg")}>
+      <ViewGalleryDetail>
         <Image
           source={{ uri: gallery.image }}
-          style={{ width: 100, height: 100 }}
+          style={{ width: 200, height: 200, marginBottom: 15 }}
           alt={gallery.name}
         />
-        <Text>{gallery.name}</Text>
-      </View>
+        <TextStyled style={{ marginBottom: 10 }}>{gallery.name}</TextStyled>
+      </ViewGalleryDetail>
       <NftList nfts={nfts} navigation={navigation} />
-    </View>
+    </BGImage>
   );
 };
 

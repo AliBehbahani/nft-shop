@@ -13,7 +13,7 @@ const NftList = ({ navigation }) => {
   const nftList = nftStore.nfts.map((nft) => (
     <NftItem nft={nft} key={nft.id} navigation={navigation} />
   ));
-  return <List>{nftList}</List>;
+  return <List style={{ borderColor: "black" }}>{nftList}</List>;
 };
 
 export default observer(NftList);

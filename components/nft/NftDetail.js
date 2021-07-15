@@ -6,24 +6,25 @@ import { Spinner } from "native-base";
 import { observer } from "mobx-react";
 //stores
 import nftStore from "../../stores/nftStore";
+//styles
+import { BGImage, TextStyled, ViewNftDetail } from "../../styles";
 
 const NftDetail = ({ route }) => {
-  // return console.log(route.params);
   const { nft } = route.params;
   if (nftStore.loading) return <Spinner />;
 
   return (
-    <>
-      <View>
+    <BGImage source={require("../../assets/bg.jpg")}>
+      <ViewNftDetail>
         <Image
           source={{ uri: nft.image }}
-          style={{ width: 100, height: 100 }}
+          style={{ width: 210, height: 210 }}
         />
-        <Text>{nft.name}</Text>
-        <Text>{nft.price}</Text>
-        <Text>{nft.description}</Text>
-      </View>
-    </>
+        <TextStyled>{nft.name}</TextStyled>
+        <TextStyled>{nft.price}</TextStyled>
+        <TextStyled>{nft.description}</TextStyled>
+      </ViewNftDetail>
+    </BGImage>
   );
 };
 export default observer(NftDetail);

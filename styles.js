@@ -25,3 +25,13 @@ export const ListStyled = styled(List.Item)`
   align-items: center;
   justify-content: center;
 `;
+export const ViewGalleryDetail = styled.View`
+  height: 30%;
+  align-items: center;
+  justify-content: center;
+`;
+export const ViewNftDetail = styled.View`
+  height: 40%;
+  align-items: center;
+  justify-content: center;
+`;
