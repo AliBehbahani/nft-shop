@@ -2,6 +2,7 @@
 import React from "react";
 import { List } from "native-base";
 import { Text } from "react-native";
+import { observer } from "mobx-react";
 //styles
 import { Total } from "../../styles";
 const CartItem = ({ item }) => {
@@ -16,4 +17,4 @@ const CartItem = ({ item }) => {
   );
 };
 
-export default CartItem;
+export default observer(CartItem);
