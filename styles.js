@@ -36,3 +36,6 @@ export const ViewNftDetail = styled.View`
   align-items: center;
   justify-content: center;
 `;
+export const Total = styled.Text`
+  margin-left: 20px;
+`;

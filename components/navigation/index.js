@@ -1,15 +1,18 @@
 //react imports
 import React from "react";
 //navigation
-import { createNativeStackNavigator } from "react-native-screens/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 
 //components
 import Home from "..//Home";
 import GalleryList from "../gallery/GalleryList";
 import GalleryDetail from "../gallery/GalleryDetail";
 import NftDetail from "../nft/NftDetail";
+import CartList from "../cart/CartList";
+import CartButton from "../cart/buttons/CartButton";
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
+
 export default RootNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Home">
@@ -29,30 +32,21 @@ export default RootNavigator = () => {
             backgroundColor: "#151e54",
           },
           headerTintColor: "white",
+          headerRight: () => <CartButton />,
         }}
       />
       <Stack.Screen
         name="GalleryDetail"
         component={GalleryDetail}
-        options={
-          //   ({
-          //     headerStyle: { backgroundColor: "#151e54" },
-          //     headerTintColor: "white",
-          //   },
-          //   ({ route }) => {
-          //     const gallery = route.params.gallery;
-          //     return { title: gallery.name };
-          //   })
-
-          ({ route }) => {
-            const gallery = route.params.gallery;
-            return {
-              title: gallery.name,
-              headerStyle: { backgroundColor: "#151e54" },
-              headerTintColor: "white",
-            };
-          }
-        }
+        options={({ route }) => {
+          const gallery = route.params.gallery;
+          return {
+            title: gallery.name,
+            headerStyle: { backgroundColor: "#151e54" },
+            headerTintColor: "white",
+            headerRight: () => <CartButton />,
+          };
+        }}
       />
       <Stack.Screen
         name="NftDetail"
@@ -63,9 +57,11 @@ export default RootNavigator = () => {
             title: nft.name,
             headerStyle: { backgroundColor: "#151e54" },
             headerTintColor: "white",
+            headerRight: () => <CartButton />,
           };
         }}
       />
+      <Stack.Screen name="CartList" component={CartList} />
     </Stack.Navigator>
   );
 };
