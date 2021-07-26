@@ -1,5 +1,5 @@
 //library imports
-import { List, Spinner } from "native-base";
+import { List, Spinner, Button } from "native-base";
 import React from "react";
 import { observer } from "mobx-react";
 //components
@@ -19,6 +19,7 @@ const CartList = () => {
   return (
     <>
       <List>{cartList}</List>
+      <Button onPress={cartStore.checkout}>Checkout</Button>
     </>
   );
 };

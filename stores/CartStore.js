@@ -13,7 +13,7 @@ class CartStore {
     this.items = items ? JSON.parse(items) : [];
   };
   addToCart = async (newItem) => {
-    const foundItem = this.items.find((item) => item.id === newItem.id);
+    const foundItem = this.items.find((item) => item.nftId === newItem.id);
     if (foundItem) foundItem.quantity += newItem.quantity;
     else this.items.push(newItem);
     await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
@@ -23,6 +23,15 @@ class CartStore {
     this.items.forEach((item) => (total += item.quantity));
     return total;
   }
+  deleteCart = async (itemId) => {
+    this.items = this.items.filter((item) => item.nftId !== itemId);
+    await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
+  };
+  checkout = async () => {
+    this.items = [];
+    await AsyncStorage.removeItem("myCart");
+    alert("you've been scammed!");
+  };
 }
 const cartStore = new CartStore();
 cartStore.fetchCart();
