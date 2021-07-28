@@ -1,6 +1,8 @@
 //library imports
 import { makeAutoObservable } from "mobx";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+//components
+import instance from "./instance";
 
 class CartStore {
   items = [];
@@ -28,9 +30,14 @@ class CartStore {
     await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
   };
   checkout = async () => {
-    this.items = [];
-    await AsyncStorage.removeItem("myCart");
-    alert("you've been scammed!");
+    try {
+      await instance.post("/checkout", this.items);
+      this.items = [];
+      await AsyncStorage.removeItem("myCart");
+      alert("you've been scammed!");
+    } catch (error) {
+      console.error(error);
+    }
   };
 }
 const cartStore = new CartStore();
